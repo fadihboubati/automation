@@ -6,7 +6,8 @@ def get_text (file_path):
         return text
 
 def extractEmails( text ):
-    all_mails_in_text =  re.findall(r'[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+' ,text )
+    mail_pattern = r'[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+'
+    all_mails_in_text =  re.findall( mail_pattern ,text )
     emails = []
     for mail in all_mails_in_text:
         if mail not in emails:
